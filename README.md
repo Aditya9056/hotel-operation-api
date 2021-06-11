@@ -1,6 +1,6 @@
 # Node.js API
 
-An API with JWT to which can be used as a plugin for other projects.
+API for Hotel and HotelChains CRUD operations.
 
 ## Tech Used
 
