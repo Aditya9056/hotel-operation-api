@@ -42,7 +42,9 @@ const messageWithSpace = message.replaceAll('+', ' ')
 I can use `Apache Jmeter` which is an awesome tool for this purpose. No, I do not had to do this for the assignment.
 
 ## Architechture Diagram
-l
-![]()
+
+![architech-design](https://github.com/Aditya9056/hotel-operation-api/blob/master/assets/architech-design.png)
 
 ## DB Desgin
+
+![architech-design](https://github.com/Aditya9056/hotel-operation-api/blob/master/assets/db-design.png)
