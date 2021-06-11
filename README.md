@@ -1,4 +1,4 @@
-# Node.js API 
+# Node.js API
 
 An API with JWT to which can be used as a plugin for other projects.
 
@@ -8,19 +8,20 @@ An API with JWT to which can be used as a plugin for other projects.
 - Express.js
 
 ## External Libraries
+
 - JOI (For Validation)
-- JWT (JSON Web Tokens)
 
 ## Database
+
 - MongoDB (Atlas basically online version of MongoDB)
 
 ## Installation
 
-```bash
+```shell
 npm install
 
 // Now start the server
-npm start
+npm run start
 ```
 
 ## Usage
@@ -32,6 +33,6 @@ npm start
 
 - Postman
 
-
 ## License
+
 [GPL](https://choosealicense.com/licenses/gpl-3.0/)

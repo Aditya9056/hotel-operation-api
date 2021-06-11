@@ -1,18 +1,8 @@
 const express = require('express');
 const app = express();
-const mongoose = require('mongoose');
-const dotenv = require('dotenv');
 const pug = require('pug');
 const path = require('path');
-
-dotenv.config();
-
-//Connect DB
-mongoose.connect(
-	process.env.DB_CONNECT,
-	{ useNewUrlParser: true, useUnifiedTopology: true },
-	() => console.log('Connected to DB!')
-);
+const conn = require('./database')
 
 // Set public path
 app.use(express.static(path.join(__dirname, 'public')));
@@ -25,18 +15,25 @@ app.get('/', (req, res) => {
 	res.render('index', { title: 'Hey', message: 'Hello there!' });
 });
 
-app.get('/register', (req, res) => {
+// Get Everything
+app.use('/get', (req, res) => {
 	res.render('register', { title: 'Hey', message: 'Hello there!' });
 });
 
 //Import Routes
-const router = require('./routes/auth');
-const proute = require('./routes/post');
+const router = require('./routes/register');
+const get = require('./routes/get');
+const update = require('./routes/update');
+const delete_data = require('./routes/delete');
 
 //Middleware
 app.use(express.json());
 
 //Route Middleware
-app.use('/api/user', router);
-app.use('/api/posts', proute);
+app.use('/api/', router);
+app.use('/api/', get);
+app.use('/api/', update);
+app.use('/api/', delete_data);
+
+
 app.listen(5000, () => console.log('Server Up and Running'));

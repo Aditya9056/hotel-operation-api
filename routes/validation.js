@@ -1,24 +1,29 @@
 // Validation
 const Joi = require('@hapi/joi');
 
-// Register Validation
-const register_val = (data) => {
+// Hotel Register Validation
+const hotel_val = (data) => {
 	const schema = {
-		name: Joi.string().min(6).required(),
-		email: Joi.string().min(6).required().email(),
-		password: Joi.string().min(6).required(),
+		name: Joi.string().required(),
+		servicesCount: Joi.number().required(),
+		guestsCount: Joi.number().required(),
+		services: Joi.required(),
+		guests: Joi.required(),
 	};
 	return Joi.validate(data, schema);
 };
 
-// Login Validation
-const login_val = (data) => {
+// HotelChain Register Validation
+const hotelchain_val = (data) => {
 	const schema = {
-		email: Joi.string().min(6).required().email(),
-		password: Joi.string().min(6).required(),
+		name: Joi.string().required(),
+		allServicesCount: Joi.number().required(),
+		allGuestsCount: Joi.number().required(),
+		allHotelsCount: Joi.number().required(),
+		allhotels: Joi.required(),
 	};
 	return Joi.validate(data, schema);
 };
 
-module.exports.register_val = register_val;
-module.exports.login_val = login_val;
+module.exports.hotel_val = hotel_val;
+module.exports.hotelchain_val = hotelchain_val;

@@ -9,11 +9,14 @@ html(lang='en')
   body
     .container
       .inputs-container
-        h1 Node.js API for User Registration and fetching
-        .input
-          input#lang_data(type='text' required='')
-          label.label Type Here
-          button.btn.submit(type='submit' onclick='showEndpoints()')
-            | Click here to know the end points
-          .result
-    script(src="/script.js")
+        h1 Node.js API for Hotels and HotelChains CRUD Operations
+         h1 EndPoints 
+         ul 
+         li GET -> Listing all Hotels with their Services and Guests "http://localhost:5000/api/get/hotels"
+         li GET -> Listing all HotelsChains with their Services and Guests "http://localhost:5000/api/get/hotelschain"
+         li POST -> Registering a new Hotel "http://localhost:5000/api/register/hotel"
+         li POST -> Registering a new HotelChain "http://localhost:5000/api/register/hotelChain"
+         li PATCH -> Updating a Hotel Data "http://localhost:5000/api/update/hotels/{id}"
+         li PATCH -> Updating a HotelChain Data "http://localhost:5000/api/update/hotelschain/{id}"
+         li DELETE -> Deleting a Hotel Data "http://localhost:5000/api/delete/hotel/{id}"
+         li DELETE -> Deleting a HotelChain Data "http://localhost:5000/api/delete/hotelchain/{id}"
